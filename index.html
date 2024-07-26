@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Reporting System</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <h1>ATM Reporting System</h1>
+  
+  <div class="auth-buttons">
+    <button id="showLoginForm">Login</button>
+    <button id="showSignupForm">Signup</button>
+    <button id="showAdminLoginForm">Admin Login</button>
+  </div>
+  
+  <div id="signupForm" class="hidden">
+    <h2>Signup</h2>
+    <form>
+      <label for="signupUsername">Username:</label>
+      <input type="text" id="signupUsername" name="username" required><br><br>
+      <label for="signupEmail">Email:</label>
+      <input type="email" id="signupEmail" name="email" required><br><br>
+      <label for="signupPassword">Password:</label>
+      <input type="password" id="signupPassword" name="password" required><br><br>
+      <label for="signupConfirmPassword">Confirm Password:</label>
+      <input type="password" id="signupConfirmPassword" name="confirmPassword" required><br><br>
+      <button type="submit">Signup</button>
+    </form>
+    <div id="signupError" class="error-message"></div>
+  </div>
+
+  <div id="loginForm" class="hidden">
+    <h2>Login</h2>
+    <form>
+      <label for="loginEmail">Email:</label>
+      <input type="email" id="loginEmail" name="email" required><br><br>
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" name="password" required><br><br>
+      <button type="submit">Login</button>
+    </form>
+    <div id="loginError" class="error-message"></div>
+  </div>
+
+  <div id="adminLoginForm" class="hidden">
+    <h2>Admin Login</h2>
+    <form>
+      <label for="adminEmail">Admin Email:</label>
+      <input type="email" id="adminEmail" name="email" required><br><br>
+      <label for="adminPassword">Password:</label>
+      <input type="password" id="adminPassword" name="password" required><br><br>
+      <button type="submit">Login</button>
+    </form>
+    <div id="adminLoginError" class="error-message"></div>
+  </div>
+
+  <div id="reportForm" class="hidden">
+    <h2>Submit a Report</h2>
+    <form>
+      <label for="atmLocation">ATM Location:</label>
+      <select id="atmLocation" name="atmLocation" required>
+        <option value="Kumarswamy Layout">Kumarswamy Layout</option>
+        <option value="Majestic">Majestic</option>
+        <option value="HSR Layout">HSR Layout</option>
+        <option value="JP Nagar">JP Nagar</option>
+      </select><br><br>
+
+      <label for="problem">Problem:</label>
+      <select id="problem" name="problem" required>
+        <option value="No Cash">No Cash</option>
+        <option value="ATM Not Working">ATM Not Working</option>
+        <option value="Card Reader Malfunction">Card Reader Malfunction</option>
+        <option value="Receipt Not Printing">Receipt Not Printing</option>
+        <option value="Screen Issues">Screen Issues</option>
+        <option value="Keyboard Issues">Keyboard Issues</option>
+        <option value="Slow Response">Slow Response</option>
+        <option value="Other">Other</option>
+      </select><br><br>
+
+      <button type="submit">Submit Report</button>
+    </form>
+    <div id="reportError" class="error-message"></div>
+  </div>
+
+  <div id="adminDashboard" class="hidden">
+    <h2>Admin Dashboard</h2>
+    <table id="reportsTable">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>ATM Location</th>
+          <th>Problem</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
